@@ -9,6 +9,11 @@ PASSWORD = "Pass"
 
 
 def try_access_point(i):
+    """
+        Essaye de se connecter a un point d'accès du campus.
+        Retourne l'url du point d'accès si celui si est disponible.
+    """
+
     url = f'https://pfrf0${i}.in.crous-toulouse.fr:8003/index.php?zone=lan'
     try:
         requests.post(url)
@@ -18,6 +23,11 @@ def try_access_point(i):
 
 
 def try_all_access_point():
+    """
+        Essaye de se connecter a tous les points d'accès du campus.
+        Retourne le premier point d'accès disponible.
+    """
+
     i = 0
     url = None
     while i <= 5 and url is None:
@@ -27,6 +37,10 @@ def try_all_access_point():
 
 
 def connect(url):
+    """
+        Connection via une URL valide
+    """
+
     print(f'Url used : {url}')
 
     data = {
