@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+# coding: utf-8
 """
     A python script allowing Students at UPS to connect easily to the campus WIFI.
 """
@@ -14,7 +16,7 @@ def try_access_point(i):
         Retourne l'url du point d'accès si celui si est disponible.
     """
 
-    url = f'https://pfrf0${i}.in.crous-toulouse.fr:8003/index.php?zone=lan'
+    url = 'https://pfrf0${i}.in.crous-toulouse.fr:8003/index.php?zone=lan'
     try:
         requests.post(url)
         return url
@@ -41,7 +43,7 @@ def connect(url):
         Connection via une URL valide
     """
 
-    print(f'Url used : {url}')
+    print('Url used : {url}')
 
     data = {
         "auth_user": LOGIN, "auth_pass": PASSWORD,
